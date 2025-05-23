@@ -1,0 +1,48 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: #0044FF;
+}
+
+#loginForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    height: 65%;
+    padding: 50px;
+}
+
+#title {
+    font-family: 'manrope';
+    font-weight: 500;
+    font-size: 3rem;
+}
+
+#button {
+    
+}
+
+.containerInput {
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    font-size: 1.5rem;
+}
+
+.input {
+    width: 30vw;
+    height: 50px;
+}
