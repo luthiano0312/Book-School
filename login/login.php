@@ -22,21 +22,21 @@
             header("location: protect.php");
         }
     ?>
-    <form action="authenticate.php" method="post" id="loginForm">
-        <h1 id="title">login</h1>
+    <form action="" method="post" id="loginForm">
+        <h1 id="title" class="font-marope-blue">login</h1>
 
         <div class="containerInput">
-            <label for="email" class="label">Email: </label>    
-            <input type="email" name="email" id="email" class="input">
+            <label for="email" class="label font-marope-blue">Email: </label>    
+            <input type="email" name="email" id="email" class="input font-marope-blue">
         </div>
 
         <div class="containerInput">
-            <label for="password" class="label">Senha: </label>
-            <input type="password" name="password" id="password" class="input">
+            <label for="password" class="label font-marope-blue">Senha: </label>
+            <input type="password" name="password" id="password" class="input font-marope-blue">
         </div>
 
         <div class="containerInput">
-            <input type="submit" value="Entrar" id="button" class="input">
+            <input type="submit" value="Entrar" id="button" class="font-marope-blue">
         </div>
     </form>
 </body>
