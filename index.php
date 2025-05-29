@@ -8,6 +8,9 @@
 <body>
     <form action="create.php" method="post">
         <h1>cadastre-se</h1>
+        <label for="escola">Escola: </label>
+        <input type="text" name="escola" id="escola">
+        <br> <br>
         <label for="nome">Nome: </label>
         <input type="text" name="nome" id="nome">
         <br> <br>   

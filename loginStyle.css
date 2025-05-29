@@ -28,7 +28,7 @@ body {
 
 #title {
     font-weight: 500;
-    font-size: 3rem;
+    font-size: 7vh;
 }
 
 #button {
@@ -61,8 +61,8 @@ body {
 
 .input {
     width: 30vw;
-    height: 50px;
-    border-radius: 20px;
+    height: 7vh;
+    border-radius: 7vh;
     border: 1px solid #00227E;
     background-color: #cedbff;
     color: #00227E;

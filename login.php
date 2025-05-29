@@ -21,7 +21,7 @@
                 $_SESSION["erro"] = "";
             }
 
-            if (isset($_SESSION["id_user"])) {
+            if (isset($_SESSION["id_aluno"])) {
                 header("location: protect.php");
             }
         ?>

@@ -12,24 +12,40 @@
         $nome = $_POST["nome"] ?? "";
         $email = $_POST["email"] ?? "";
         $senha = $_POST["senha"] ?? "";
+        $escola = $_POST["escola"] ?? "";
 
-        if ($nome && $email && $senha) {
-            $hash = password_hash($senha,PASSWORD_DEFAULT);
+        $stmt = $conn->prepare("SELECT * FROM ESCOLAS WHERE NOME = :escola");
+        $stmt->bindValue(":escola", $escola);
+        $stmt->execute();
+        $escolaBD = $stmt->fetch();
 
-            $stmt = $conn->prepare("INSERT INTO alunos (NOME, EMAIL, SENHA) VALUES (:nome, :email, :senha);");
+        $stmt = $conn->prepare("SELECT * FROM alunos WHERE EMAIL = :email;");
+        $stmt->bindValue(":email", $email);
+        $stmt->execute();
+        $aluno = $stmt->fetch();
 
-            $stmt->bindValue(":nome", $nome);
-            $stmt->bindValue(":email", $email);
-            $stmt->bindValue(":senha", $hash);
+        if ($aluno) {
+            if ($escolaBD) {
+                if ($nome && $email && $senha) {
+                    $hash = password_hash($senha,PASSWORD_DEFAULT);
 
-            if ($stmt->execute()) {
-                echo "dados cadastrados com sucesso";
-            } else {
-                echo "erro no cadastro";
+                    $stmt = $conn->prepare("INSERT INTO alunos (NOME, EMAIL, SENHA, ID_ESCOLA) VALUES (:nome, :email, :senha, :id);");  
+                    $stmt->bindValue(":nome", $nome);
+                    $stmt->bindValue(":email", $email);
+                    $stmt->bindValue(":senha", $hash);
+                    $stmt->bindValue(":id", $escolaBD["id_escola"]);
+
+                    if ($stmt->execute()) {
+                        echo "dados cadastrados com sucesso";
+                    } else {
+                        echo "erro no cadastro";
+                    }
+                } else {
+                    echo "prencha os campos";
+                }  
             }
-        } else {
-            echo "prencha os campos";
         }
+
     ?>
 
     <form action="index.php" method="post">
