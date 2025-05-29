@@ -43,7 +43,11 @@
                 } else {
                     echo "prencha os campos";
                 }  
+            } else {
+                echo "escola não encontrada";
             }
+        } else {
+            echo "aluno ja existente";
         }
 
     ?>
