@@ -19,35 +19,35 @@
         $stmt->execute();
         $escolaBD = $stmt->fetch();
 
-        $stmt = $conn->prepare("SELECT * FROM alunos WHERE EMAIL = :email;");
+        $stmt = $conn->prepare("SELECT * FROM bibliotecarios WHERE EMAIL = :email;");
         $stmt->bindValue(":email", $email);
         $stmt->execute();
-        $aluno = $stmt->fetch();
+        $usuario = $stmt->fetch();
 
-        if ($aluno) {
+        if (!$usuario) {
             if ($escolaBD) {
                 if ($nome && $email && $senha) {
                     $hash = password_hash($senha,PASSWORD_DEFAULT);
 
-                    $stmt = $conn->prepare("INSERT INTO alunos (NOME, EMAIL, SENHA, ID_ESCOLA) VALUES (:nome, :email, :senha, :id);");  
+                    $stmt = $conn->prepare("INSERT INTO bibliotecarios (NOME, EMAIL, SENHA, ID_ESCOLA) VALUES (:nome, :email, :senha, :id);");  
                     $stmt->bindValue(":nome", $nome);
                     $stmt->bindValue(":email", $email);
                     $stmt->bindValue(":senha", $hash);
                     $stmt->bindValue(":id", $escolaBD["id_escola"]);
 
                     if ($stmt->execute()) {
-                        echo "dados cadastrados com sucesso";
+                        echo "Dados cadastrados com sucesso";
                     } else {
-                        echo "erro no cadastro";
+                        echo "Erro no cadastro";
                     }
                 } else {
-                    echo "prencha os campos";
+                    echo "Prencha os campos";
                 }  
             } else {
-                echo "escola não encontrada";
+                echo "Escola não encontrada";
             }
         } else {
-            echo "aluno ja existente";
+            echo "Bilbiotecario ja existente";
         }
 
     ?>

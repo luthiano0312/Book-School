@@ -27,7 +27,7 @@
     <hr>
     <br>
     
-    <form action="login.php" method="post">
+    <form action="login/login.php" method="post">
         <input type="submit" value="Entrar">
     </form>
 </body>
