@@ -40,7 +40,7 @@
                         </form>
                     </td>
                     <td>
-                        <form action="" method="post">
+                        <form action="delete.php" method="post">
                             <input type="hidden" name="id_aluno" value="<?php echo $rows->id_aluno; ?>">
                             <input type="submit" value="excluir">
                         </form>
@@ -49,7 +49,7 @@
             <?php } ?>
         </tbody>
     </table>
-    <form action="form-aluno.php" method="post">
+    <form action="form_create_aluno.php" method="post">
         <input type="submit" value="cadastrar">
     </form>
 

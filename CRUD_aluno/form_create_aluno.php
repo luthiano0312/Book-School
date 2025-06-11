@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="create-aluno.php" method="post">
+    <form action="create_aluno.php" method="post">
 
         <h1>cadastre-se</h1>
 
