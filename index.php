@@ -1,4 +1,13 @@
-<!DOCTYPE html>
+<?php header("location: CRUD_aluno/dashboard.php");?>
+
+<!-- provalvelmente não vou mais precisar desse index -->
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -31,4 +40,4 @@
         <input type="submit" value="Entrar">
     </form>
 </body>
-</html>
+</html> -->
