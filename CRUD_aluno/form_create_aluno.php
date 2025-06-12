@@ -25,7 +25,7 @@
 
         <br> <br>
 
-        <input type="submit" value="cadastrar-se">
+        <input type="submit" value="cadastrar">
     </form>
 </body>
 </html>

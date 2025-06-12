@@ -31,19 +31,17 @@
                 $stmt->bindValue(":id", $_SESSION["id_escola"]);
 
                 if ($stmt->execute()) {
-                    echo "dados cadastrados com sucesso";
+                    echo "Dados cadastrados com sucesso";
                 } else {
-                    echo "erro no cadastro";
+                    echo "Erro no cadastro";
                 }
             } else {
                 echo "Prencha os campos";
             }  
         } else {
-            echo "aluno ja existente";
+            echo "Aluno ja existente";
         }
     ?>
-    <form action="dashboard.php" method="post">
-        <input type="submit" value="voltar">
-    </form>
+    <a href="dashboard.php">voltar</a>
 </body>
 </html>
