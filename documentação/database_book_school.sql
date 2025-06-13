@@ -31,7 +31,7 @@ CREATE TABLE livros (
     id_escola INT NOT NULL,
     titulo VARCHAR(255) NOT NULL,
     autor VARCHAR(255) NOT NULL,
-    ano_puplicacao YEAR NOT NULL,
+    ano_publicacao YEAR NOT NULL,
     genero VARCHAR(255) NOT NULL,
     editora VARCHAR(255) NOT NULL,
     FOREIGN KEY (id_escola) REFERENCES escolas(id_escola)
