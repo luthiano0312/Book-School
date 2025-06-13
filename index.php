@@ -1,4 +1,4 @@
-<?php header("location: CRUD_aluno/dashboard.php");?>
+<?php header("location: CRUD_alunos/dashboard.php");?>
 
 <!-- provalvelmente não vou mais precisar desse index -->
 

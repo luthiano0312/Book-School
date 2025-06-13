@@ -9,10 +9,10 @@
     <?php
         require "connection.php";
 
-        $nome = $_POST["nome"] ?? "";
-        $email = $_POST["email"] ?? "";
-        $senha = $_POST["senha"] ?? "";
-        $escola = $_POST["escola"] ?? "";
+        $nome = $_POST["nome"] ?? "1";
+        $email = $_POST["email"] ?? "1@1";
+        $senha = $_POST["senha"] ?? "1";
+        $escola = $_POST["escola"] ?? "EEEP";
 
         $stmt = $conn->prepare("SELECT * FROM ESCOLAS WHERE NOME = :escola");
         $stmt->bindValue(":escola", $escola);
