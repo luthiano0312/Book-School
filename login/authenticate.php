@@ -20,7 +20,7 @@
     if ($usuario && password_verify($senha, $usuario["senha"])) {
         $_SESSION["id_usuario"] = $usuario["id_bibliotecario"];
         $_SESSION["id_escola"] = $usuario["id_escola"];
-        header("location: ../CRUD_aluno/dashboard.php");
+        header("location: ../CRUD_alunos/dashboard.php");
         exit;
     } else {
         $_SESSION["erro"] = "Senha ou email incorretos";
