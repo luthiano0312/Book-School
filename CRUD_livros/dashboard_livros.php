@@ -9,6 +9,16 @@
     <title>Document</title>
 </head>
 <body>
+    <head> 
+        <div>Book school</div>   
+        <div>Gerenciamento de livros</div>
+    </head>
+
+    <aside>
+        <a href="../CRUD_livros/dashboard_livros.php">Livros</a>
+        <a href="../CRUD_alunos/dashboard.php">Alunos</a>
+    </aside>
+    
     <table border="1">
         <thead>
             <th>id do livro</th>
