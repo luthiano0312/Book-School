@@ -27,12 +27,12 @@
             $stmt->bindValue(":id", $id_livro);
     
             if($stmt->execute()) {
-                echo "Dados atualizados";
+                header("location: dashboard_livros.php?sucesso=Atualizado com sucesso");
             } else {
-                echo "Erro na atualização";
+                header("location: form_update_aluno.php?erro=Erro na atualização&id_livro=$id_livro&titulo=$titulo&autor=$autor&ano_publicacao=$ano_publicacao&genero=$genero&editora=$editora&id_livro=$id_livro");
             }
         } else {
-            echo "Preencha os campos";
+            header("location: form_update_livro.php?erro=Por favor preencha os campos&id_livro=$id_livro&titulo=$titulo&autor=$autor&ano_publicacao=$ano_publicacao&genero=$genero&editora=$editora&id_livro=$id_livro");
         }
 
     ?>

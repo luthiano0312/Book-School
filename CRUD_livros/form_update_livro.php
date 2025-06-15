@@ -4,41 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <link rel="stylesheet" href="../assets/update_sytle.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manjari:wght@100;400;700&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <form action="update_livro.php" method="post">
+    
+    <?php
+        if (isset($_GET["erro"])) {?>
+            <p id="erro"><?php echo $_GET["erro"];?> </p><?php 
+            unset($_GET["erro"]);
+        }
+    ?>
+    <form action="update_livro.php" method="post" id="form" style="height: 90vh;">
 
-        <h1>Cadastrar Livro</h1>
+        <input type="hidden" name="id_livro" id="id_livro" value="<?php echo $_GET["id_livro"]?>">
 
-        <input type="hidden" name="id_livro" id="id_livro" value="<?php echo $_POST["id_livro"]?>" >
+        <div id="containerTitle">
+            <p id="title">Atualizar cadastro</p>
+        </div>
 
-        <label for="titulo">Título: </label>
-        <input type="text" name="titulo" id="titulo" value="<?php echo $_POST["titulo"]?>" required>
+        <div class="containerInput">
+            <label for="titulo">titulo </label>
+            <input type="text" name="titulo" id="titulo" class="input" value="<?php echo $_GET["titulo"];?>">
+        </div>
 
-        <br><br>
+        <div class="containerInput">
+            <label for="autor">autor </label>
+            <input type="text" name="autor" id="autor" class="input" value="<?php echo $_GET["autor"];?>">
+        </div>
 
-        <label for="autor">Autor: </label>
-        <input type="text" name="autor" id="autor" value="<?php echo $_POST["autor"]?>" required>
+        <div class="containerInput">
+            <label for="ano_publicacao">Ano de Publicação </label>
+            <input type="text" name="ano_publicacao" id="ano_publicacao" class="input" value="<?php echo $_GET["ano_publicacao"];?>">
+        </div>
 
-        <br><br>
+        <div class="containerInput">
+            <label for="genero">Gênero </label>
+            <input type="text" name="genero" id="genero" class="input" value="<?php echo $_GET["genero"];?>">
+        </div>
 
-        <label for="ano_publicacao">Ano de Publicação: </label>
-        <input type="number" name="ano_publicacao" id="ano_publicacao" min="1000" max="9999" value="<?php echo $_POST["ano_publicacao"]?>" required>
-
-        <br><br>
-
-        <label for="genero">Gênero: </label>
-        <input type="text" name="genero" id="genero" value="<?php echo $_POST["genero"]?>" >
-
-        <br><br>
-
-        <label for="editora">Editora: </label>
-        <input type="text" name="editora" id="editora" value="<?php echo $_POST["editora"]?>" >
-
-        <br><br>
-
-        <input type="submit" value="atualizar">
-
+        <div class="containerInput">
+            <label for="editora">Editora </label>
+            <input type="text" name="editora" id="editora" class="input" value="<?php echo $_GET["editora"];?>">
+        </div>
+        
+        <div id="containerButtons">
+            <a href="dashboard_livros.php" id="cancelar">cancelar</a>
+            <input type="submit" value="atualizar" id="atualizar">
+        </div>
     </form>
 </body>
 </html>

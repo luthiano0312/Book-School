@@ -102,7 +102,7 @@
                                         <td><?php echo $rows->genero; ?></td>
                                         <td><?php echo $rows->editora; ?></td>
                                         <td>
-                                            <form action="form_update_livro.php" method="post">
+                                            <form action="form_update_livro.php" method="get">
                                                 <input type="hidden" name="id_livro" value="<?php echo $rows->id_livro; ?>">
                                                 <input type="hidden" name="titulo" value="<?php echo $rows->titulo; ?>">
                                                 <input type="hidden" name="autor" value="<?php echo $rows->autor; ?>">
