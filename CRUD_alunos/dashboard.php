@@ -52,7 +52,24 @@
 
         <main id="main">
             <div id="containerMain">
-                <a href="form_create_aluno.php" id="cadastrar">cadastrar</a>
+                <div id="containerCadastro">
+                    <?php 
+                        if (isset($_GET["sucesso"])) {?>
+                            <p id="sucesso"><?php echo $_GET["sucesso"];?> </p><?php 
+                            unset($_GET["sucesso"]);
+                        }
+                    ?>
+                    <script>
+                        setTimeout(() => {
+                            const msg = document.querySelector('#sucesso');
+                            if (msg) {
+                            msg.style.display = 'none';
+                            }
+                        }, 5000);
+                    </script>
+
+                    <a href="form_create_aluno.php" id="cadastrar">cadastrar</a>
+                </div>    
 
                 <div id="tableWrapper">
                     <table id="table">

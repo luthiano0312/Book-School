@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <!-- <link rel="stylesheet" href="../assets/create.css"> -->
+    <link rel="stylesheet" href="../assets/create.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,37 +17,36 @@
 </head>
 <body>
     <?php 
-        if (isset($_GET["erro"])) {
-            echo $_GET["erro"];
+        if (isset($_GET["erro"])) {?>
+            <p id="erro"><?php echo $_GET["erro"];?> </p><?php 
             unset($_GET["erro"]);
         }
-
-        if (isset($_GET["sucesso"])) {
-            echo $_GET["sucesso"];
-            unset($_GET["sucesso"]);
-        }
     ?>
-    <form action="create_aluno.php" method="post">
+    <form action="create_aluno.php" method="post" id="form">
+        <div id="containerTitle">
+            <p id="title">Cadastrar aluno</p>
+        </div>
 
-        <h1>cadastrar</h1>
+        <div class="containerInput">
+            <label for="nome">Nome </label>
+            <input type="text" name="nome" id="nome" class="input">
+        </div>
 
-        <label for="nome">Nome: </label>
-        <input type="text" name="nome" id="nome">
+        <div class="containerInput">
+            <label for="email">Email </label>
+            <input type="email" name="email" id="email" class="input">
+        </div>
 
-        <br> <br>   
-
-        <label for="email">Email: </label>
-        <input type="email" name="email" id="email">
-
-        <br> <br>
-
-        <label for="senha">Senha: </label>
-        <input type="password" name="senha" id="senha">
-
-        <br> <br>
-
-        <input type="submit" value="cadastrar">
+        <div class="containerInput">
+            <label for="senha">Senha </label>
+            <input type="password" name="senha" id="senha" class="input">
+        </div>
+        
+        <div id="containerButtons">
+            <a href="dashboard.php" id="cancelar">cancelar</a>
+            <input type="submit" value="cadastrar" id="cadastrar">
+        </div>
     </form>
-    <a href="dashboard.php">cancelar</a>
+    
 </body>
 </html>

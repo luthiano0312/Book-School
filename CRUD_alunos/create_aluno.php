@@ -31,15 +31,15 @@
                 $stmt->bindValue(":id", $_SESSION["id_escola"]);
 
                 if ($stmt->execute()) {
-                    header("location: form_create_aluno.php?sucesso=Cadastrado com sucesso");
+                    header("location: dashboard.php?sucesso=Cadastrado com sucesso");
                 } else {
                     header("location: form_create_aluno.php?erro=Erro no cadastro");
                 }
             } else {
-                header("location: form_create_aluno.php?erro=Usuário já existente"); 
+                header("location: form_create_aluno.php?erro=Esse email já está sendo usado"); 
             }  
         } else {
-            header("location: form_create_aluno.php?erro=Preencha os campos");
+            header("location: form_create_aluno.php?erro=Por favor preencha os campos");
         }
     ?>
     <a href="dashboard.php">voltar</a>
