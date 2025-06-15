@@ -20,8 +20,8 @@
         $stmt->execute();
         $usuario = $stmt->fetch();
 
-        if (!$usuario) {
-            if ($nome && $email && $senha) {
+        if ($nome && $email && $senha) {
+            if (!$usuario) {
                 $hash = password_hash($senha,PASSWORD_DEFAULT);
 
                 $stmt = $conn->prepare("INSERT INTO alunos (NOME, EMAIL, SENHA, ID_ESCOLA) VALUES (:nome, :email, :senha, :id);");  
@@ -31,15 +31,15 @@
                 $stmt->bindValue(":id", $_SESSION["id_escola"]);
 
                 if ($stmt->execute()) {
-                    echo "Dados cadastrados com sucesso";
+                    header("location: form_create_aluno.php?sucesso=Cadastrado com sucesso");
                 } else {
-                    echo "Erro no cadastro";
+                    header("location: form_create_aluno.php?erro=Erro no cadastro");
                 }
             } else {
-                echo "Prencha os campos";
+                header("location: form_create_aluno.php?erro=Usuário já existente"); 
             }  
         } else {
-            echo "Aluno ja existente";
+            header("location: form_create_aluno.php?erro=Preencha os campos");
         }
     ?>
     <a href="dashboard.php">voltar</a>
