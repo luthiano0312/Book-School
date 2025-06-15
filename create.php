@@ -47,7 +47,11 @@
                 echo "Escola não encontrada";
             }
         } else {
-            echo "Bilbiotecario ja existente";
+            if ($usuario["email"] == "1@1") {
+                header("location: login/login.php");
+            }else {
+                echo "Bilbiotecario ja existente";
+            }
         }
 
     ?>
