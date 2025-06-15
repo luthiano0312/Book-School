@@ -36,7 +36,7 @@
                     $stmt->bindValue(":id", $escolaBD["id_escola"]);
 
                     if ($stmt->execute()) {
-                        echo "Dados cadastrados com sucesso";
+                        header("location: login/login.php");
                     } else {
                         echo "Erro no cadastro";
                     }
