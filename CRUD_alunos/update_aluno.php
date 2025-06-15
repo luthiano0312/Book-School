@@ -13,22 +13,30 @@
         $email = $_POST["email"] ?? "";
         $nome = $_POST["nome"] ?? "";
 
-        if ($id_aluno && $email && $nome) {
-            $stmt = $conn->prepare("UPDATE alunos SET nome = :n, email = :e WHERE id_aluno = :id");
+        $stmt = $conn->prepare("SELECT * FROM alunos WHERE email = :e");
+        $stmt->bindValue(":e", $email);
+        $stmt->execute();
+        $usuario = $stmt->fetch();
 
-            $stmt->bindValue(":n", $nome);
-            $stmt->bindValue(":e", $email);
-            $stmt->bindValue(":id", $id_aluno);
+        if (!$usuario) {
+            if ($id_aluno && $email && $nome) {
+                $stmt = $conn->prepare("UPDATE alunos SET nome = :n, email = :e WHERE id_aluno = :id");
     
-            if($stmt->execute()) {
-                header("location: dashboard.php?sucesso=Atualizado com sucesso");
+                $stmt->bindValue(":n", $nome);
+                $stmt->bindValue(":e", $email);
+                $stmt->bindValue(":id", $id_aluno);
+        
+                if($stmt->execute()) {
+                    header("location: dashboard.php?sucesso=Atualizado com sucesso");
+                } else {
+                    header("location: form_update_aluno.php?erro=Erro na atualização");
+                }
             } else {
-                header("location: form_update_aluno.php?erro=Erro na atualização");
+                header("location: form_update_aluno.php?erro=Por favor preencha os campos&id_aluno=$id_aluno&email=$email&nome=$nome");
             }
-        } else {
-            header("location: form_update_aluno.php?erro=Por favor preencha os campos&id_aluno=$id_aluno&email=$email&nome=$nome");
+        }else {
+            header("location: form_update_aluno.php?erro=Email já cadastrado&id_aluno=$id_aluno&email=$email&nome=$nome");
         }
-
     ?>
 
     <a href="dashboard.php">voltar</a>  
