@@ -1,0 +1,97 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    font-family: 'manrope';
+    background-color: #ACEDFF;
+    color: white;
+    gap: 1.5vh;
+}
+
+#erro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2vh;
+    background-color: rgb(255, 41, 41);
+    height: 7vh;
+    width: 32.5vw;
+    border-radius: 3vh;
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0044FF;
+    height: 75vh;
+    width: 32.5vw;
+    padding: 5vh;
+    border-radius: 5vh;
+}
+
+#title {
+    font-size: 6.5vh;
+}
+
+#containerButtons {
+    padding: 0px 2vw;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}   
+
+#cancelar {
+    font-size: 4vh;
+    text-decoration: none;
+    color: white;
+}
+#cancelar:hover {
+    text-decoration: underline;
+    color: white;
+}
+
+#cadastrar {
+    background-color: #00227E;
+    border: none;
+    border-radius: 4vh;
+    padding: 1.5vh 3vw;
+    color: white;
+    font-size: 4vh;
+}
+#cadastrar:hover {
+    background-color: #ACEDFF;
+    color: #00227E;
+}
+
+
+.containerInput {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-size: 3vh;
+}
+
+.input {
+    font-size: 3vh;
+    padding: 5px;
+    height: 6vh;
+    border-radius: 2vh;
+    border: none;
+    color: #00227E;
+}
+
+.input:focus {
+    outline: 3px solid #00227E;
+}

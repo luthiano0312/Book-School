@@ -30,12 +30,12 @@
             $stmt->bindValue(":id", $id_escola);
 
             if ($stmt->execute()) {
-                echo "Dados cadastrados com sucesso";
+                header("location: dashboard_livros.php?sucesso=Cadastrado com sucesso");
             } else {
-                echo "Erro no cadastro";
+                header("location: form_create_livro.php?erro=Erro no cadastro");
             } 
         } else {
-            echo "Prencha os campos";
+            header("location: form_create_livro.php?erro=Por favor preencha os campos");
         }
     ?>
     <a href="dashboard_livros.php">voltar</a>
