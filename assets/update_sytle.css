@@ -14,7 +14,7 @@ body {
     font-family: 'manrope';
     background-color: #ACEDFF;
     color: white;
-    gap: 2vh;
+    gap: 1.5vh;
 }
 
 #erro {
@@ -23,7 +23,7 @@ body {
     justify-content: center;
     padding: 2vh;
     background-color: rgb(255, 41, 41);
-    height: 10vh;
+    height: 7vh;
     width: 32.5vw;
     border-radius: 3vh;
 }
@@ -62,7 +62,7 @@ body {
     color: white;
 }
 
-#cadastrar {
+#atualizar {
     background-color: #00227E;
     border: none;
     border-radius: 4vh;
@@ -70,7 +70,7 @@ body {
     color: white;
     font-size: 4vh;
 }
-#cadastrar:hover {
+#atualizar:hover {
     background-color: #ACEDFF;
     color: #00227E;
 }

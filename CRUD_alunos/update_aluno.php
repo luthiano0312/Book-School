@@ -21,12 +21,12 @@
             $stmt->bindValue(":id", $id_aluno);
     
             if($stmt->execute()) {
-                echo "dados atualizados";
+                header("location: dashboard.php?sucesso=Atualizado com sucesso");
             } else {
-                echo "erro na atualização";
+                header("location: form_update_aluno.php?erro=Erro na atualização");
             }
         } else {
-            echo "Preencha os campos";
+            header("location: form_update_aluno.php?erro=Por favor preencha os campos&id_aluno=$id_aluno&email=$email&nome=$nome");
         }
 
     ?>
