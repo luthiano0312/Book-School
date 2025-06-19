@@ -23,6 +23,8 @@ CREATE TABLE alunos (
     nome VARCHAR(255) NOT NULL,
     email VARCHAR(255) UNIQUE NOT NULL,
     senha VARCHAR(255) NOT NULL,
+    serie VARCHAR(255) NOT NULL,
+    matricula INT(255) NOT NULL, 
     FOREIGN KEY (id_escola) REFERENCES escolas(id_escola)
 );
 
