@@ -11,9 +11,9 @@
         
         require "../connection.php";
 
-        $nome = $_POST["nome"] ?? "";
-        $email = $_POST["email"] ?? "";
-        $senha = $_POST["senha"] ?? "";
+        $nome = trim($_POST["nome"]) ?? "";
+        $email = trim($_POST["email"]) ?? "";
+        $senha = trim($_POST["senha"]) ?? "";
 
         $stmt = $conn->prepare("SELECT * FROM alunos WHERE EMAIL = :email;");
         $stmt->bindValue(":email", $email);
