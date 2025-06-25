@@ -40,11 +40,11 @@
     <div id="containerBody">
         <aside id="sideBar">
             <div id="containerSideBar">
-                <a href="../CRUD_alunos/dashboard.php">Alunos</a>
+                <a href="../alunos/dashboard.php">Alunos</a>
                 
-                <a href="../CRUD_livros/dashboard_livros.php">Livros</a>
+                <a href="../livros/dashboard_livros.php">Livros</a>
 
-                <a href="../CRUD_emprestimos/dashboard_emprestimos.php">Emprestimos</a>
+                <a href="../emprestimos/dashboard_emprestimos.php">Emprestimos</a>
             </div>
 
             <form action="../login/logout.php" method="post">
