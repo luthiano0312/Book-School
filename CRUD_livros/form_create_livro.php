@@ -22,7 +22,7 @@
             unset($_GET["erro"]);
         }
     ?>
-    <form action="create_livro.php" method="post" id="form" style="height: 90vh;">
+    <form action="create_livro.php" method="post" id="form">
         <div id="containerTitle">
             <p id="title">Cadastrar Livro</p>
         </div>
