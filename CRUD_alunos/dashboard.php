@@ -43,6 +43,8 @@
                 <a href="../CRUD_alunos/dashboard.php">Alunos</a>
                 
                 <a href="../CRUD_livros/dashboard_livros.php">Livros</a>
+                
+                <a href="../CRUD_emprestimos/dashboard_emprestimos.php">Emprestimos</a>
             </div>
 
             <form action="../login/logout.php" method="post">
@@ -77,6 +79,8 @@
                             <th>Id do aluno</th>
                             <th>Nome</th>
                             <th>Email</th>
+                            <th>Serie</th>
+                            <th>Matricula</th>
                             <th></th>
                             <th></th>
                         </thead>
@@ -90,27 +94,36 @@
 
                             $stmt = $conn->prepare("SELECT * FROM alunos WHERE id_escola = :id;");
                             $stmt->bindValue(":id", $id_escola);
-                            if ($stmt->execute()) {
+
+                            if ($stmt->execute()) { 
+
                                 while ($rows = $stmt->fetch(PDO::FETCH_OBJ)) { ?>
+
                                     <tr>
-                                        <td><?php echo $rows->id_aluno; ?></td>
-                                        <td><?php echo $rows->nome; ?></td>
-                                        <td><?php echo $rows->email; ?></td>
-                                        <td>
+                                        <td class="td"><?php echo $rows->id_aluno; ?></td>
+                                        <td class="td"><?php echo $rows->nome; ?></td>
+                                        <td class="td"><?php echo $rows->email; ?></td>
+                                        <td class="td"><?php echo $rows->serie; ?></td>
+                                        <td class="td"><?php echo $rows->matricula; ?></td>
+                                        <td class="td">
+
                                             <form action="form_update_aluno.php" method="get">
                                                 <input type="hidden" name="id_aluno" value="<?php echo $rows->id_aluno; ?>">
                                                 <input type="hidden" name="nome" value="<?php echo $rows->nome; ?>">
                                                 <input type="hidden" name="email" value="<?php echo $rows->email; ?>">
+                                                
                                                 <button type="submit" class="button">
                                                     <svg class="icone" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 51 50" fill="none">
                                                         <path d="M43.6458 14.6668C44.4583 13.8543 44.4583 12.5001 43.6458 11.7293L38.7708 6.85429C38 6.04179 36.6458 6.04179 35.8333 6.85429L32 10.6668L39.8125 18.4793M6.75 35.9376V43.7501H14.5625L37.6042 20.6876L29.7917 12.8751L6.75 35.9376Z" fill="black"/>
                                                     </svg>
                                                 </button>
                                             </form>
+
                                         </td>
-                                        <td>
+                                        <td class="td">
                                             <form action="delete.php" method="post">
                                                 <input type="hidden" name="id_aluno" value="<?php echo $rows->id_aluno; ?>">
+                                                
                                                 <button type="submit" class="button">
                                                     <svg class="icone" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 51 50" fill="none">
                                                         <path d="M38 10.4166V39.5833C38 40.625 36.9583 41.6666 35.9167 41.6666H25.5H15.0833C14.0417 41.6666 13 40.625 13 39.5833V10.4166" stroke="black" stroke-width="4.16667" stroke-linecap="round" stroke-linejoin="round"/>
