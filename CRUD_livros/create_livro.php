@@ -12,11 +12,11 @@
         require "../connection.php";
         $id_escola = $_SESSION["id_escola"];
         
-        $titulo = $_POST["titulo"] ?? "";
-        $autor = $_POST["autor"] ?? "";
-        $ano_publicacao = $_POST["ano_publicacao"] ?? "";
-        $genero = $_POST["genero"] ?? "";
-        $editora = $_POST["editora"] ?? "";
+        $titulo = trim($_POST["titulo"]) ?? "";
+        $autor = trim($_POST["autor"]) ?? "";
+        $ano_publicacao = trim($_POST["ano_publicacao"]) ?? "";
+        $genero = trim($_POST["genero"]) ?? "";
+        $editora = trim($_POST["editora"]) ?? "";
         
         if ($titulo && $autor && $ano_publicacao && $genero && $editora) {
 

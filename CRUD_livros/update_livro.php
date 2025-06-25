@@ -9,12 +9,12 @@
     <?php 
         require_once "../connection.php";
 
-        $id_livro = $_POST["id_livro"] ?? "";
-        $titulo = $_POST["titulo"] ?? "";
-        $autor = $_POST["autor"] ?? "";
-        $ano_publicacao = $_POST["ano_publicacao"] ?? "";
-        $genero = $_POST["genero"] ?? "";
-        $editora = $_POST["editora"] ?? "";
+        $id_livro = trim($_POST["id_livro"]) ?? "";
+        $titulo = trim($_POST["titulo"]) ?? "";
+        $autor = trim($_POST["autor"]) ?? "";
+        $ano_publicacao = trim($_POST["ano_publicacao"]) ?? "";
+        $genero = trim($_POST["genero"]) ?? "";
+        $editora = trim($_POST["editora"]) ?? "";
 
         if ($id_livro && $titulo && $autor && $ano_publicacao && $genero && $editora) {
             $stmt = $conn->prepare("UPDATE livros SET titulo = :titulo, autor = :autor, ano_publicacao = :ano, genero = :genero, editora = :editora WHERE id_livro = :id");

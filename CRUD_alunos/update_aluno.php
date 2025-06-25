@@ -9,9 +9,9 @@
     <?php 
         require_once "../connection.php";
 
-        $id_aluno = $_POST["id_aluno"] ?? "";
-        $email = $_POST["email"] ?? "";
-        $nome = $_POST["nome"] ?? "";
+        $id_aluno = trim($_POST["id_aluno"]) ?? "";
+        $email = trim($_POST["email"]) ?? "";
+        $nome = trim($_POST["nome"]) ?? "";
 
         $stmt = $conn->prepare("SELECT * FROM alunos WHERE email = :e");
         $stmt->bindValue(":e", $email);
