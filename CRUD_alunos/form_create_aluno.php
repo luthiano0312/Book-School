@@ -38,6 +38,16 @@
         </div>
 
         <div class="containerInput">
+            <label for="serie">Serie </label>
+            <input type="text" name="serie" id="serie" class="input">
+        </div>
+
+        <div class="containerInput">
+            <label for="matricula">Matricula </label>
+            <input type="number" name="matricula" id="matricula" class="input">
+        </div>
+
+        <div class="containerInput">
             <label for="senha">Senha </label>
             <input type="password" name="senha" id="senha" class="input">
         </div>

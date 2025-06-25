@@ -14,20 +14,24 @@
         $nome = $_POST["nome"] ?? "";
         $email = $_POST["email"] ?? "";
         $senha = $_POST["senha"] ?? "";
+        $serie = $_POST["serie"] ?? "";
+        $matricula = $_POST["matricula"] ?? "";
 
         $stmt = $conn->prepare("SELECT * FROM alunos WHERE EMAIL = :email;");
         $stmt->bindValue(":email", $email);
         $stmt->execute();
         $usuario = $stmt->fetch();
 
-        if ($nome && $email && $senha) {
+        if ($nome && $email && $senha && $serie && $matricula) {
             if (!$usuario) {
                 $hash = password_hash($senha,PASSWORD_DEFAULT);
 
-                $stmt = $conn->prepare("INSERT INTO alunos (NOME, EMAIL, SENHA, ID_ESCOLA) VALUES (:nome, :email, :senha, :id);");  
+                $stmt = $conn->prepare("INSERT INTO alunos (NOME, EMAIL, SENHA, SERIE, MATRICULA, ID_ESCOLA) VALUES (:nome, :email, :senha, :serie, :matricula, :id);");  
                 $stmt->bindValue(":nome", $nome);
                 $stmt->bindValue(":email", $email);
                 $stmt->bindValue(":senha", $hash);
+                $stmt->bindValue(":matricula", $matricula);
+                $stmt->bindValue(":serie", $serie);
                 $stmt->bindValue(":id", $_SESSION["id_escola"]);
 
                 if ($stmt->execute()) {
